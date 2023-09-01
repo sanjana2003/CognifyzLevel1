@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #calculator {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1">
+        <br>
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2">
+        <br>
+        <button id="calculateButton">Add</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        const calculateButton = document.getElementById('calculateButton');
+        const num1Input = document.getElementById('num1');
+        const num2Input = document.getElementById('num2');
+        const resultOutput = document.getElementById('result');
+
+        calculateButton.addEventListener('click', function() {
+            const num1 = parseFloat(num1Input.value);
+            const num2 = parseFloat(num2Input.value);
+            const sum = num1 + num2;
+            resultOutput.textContent = `Result: ${sum}`;
+        });
+    </script>
+</body>
+</html>
